@@ -1,12 +1,16 @@
 [green_agent]
 agentbeats_id = "019cf80f-8938-79c0-a221-4c7eadd43e7e"
-env = { LOG_LEVEL = "INFO", OPENAI_API_KEY = "${OPENAI_API_KEY}" }
+env = {OPENAI_API_KEY = "${OPENAI_API_KEY}", LOG_LEVEL = "INFO"}
 
 [[participants]]
 agentbeats_id = "019d7357-63bf-7342-a6c6-178ac0ce62b0"
-name = "agent"
-env = { LOG_LEVEL = "INFO", AGENT_LLM = "openai/gpt-4.5-mini", OPENAI_API_KEY = "${OPENAI_API_KEY}" }
+name = "asturias"
+env = {OPENAI_API_KEY = "${OPENAI_API_KEY}", AGENT_LLM = "openai/gpt-4.5-mini"}
 
 [config]
-domain = "airline"
-user_llm = "openai/gpt-4.5-mini"
+domain = "corebench_hard"
+num_tasks = 3 # Use 72 for all tasks
+use_mcp = true
+mcp_server_command = ["uv", "run", "mcp", "run", "scenarios/corebench/mcp_server.py"]
+keep_traces = true 
+use_cache = false
