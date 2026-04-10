@@ -2,6 +2,7 @@
 image = "ghcr.io/rdi-foundation/tau2-agentbeats:latest"
 env = { LOG_LEVEL = "INFO", OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
+
 [[participants]]
 agentbeats_id = "019d7357-63bf-7342-a6c6-178ac0ce62b0"
 name = "agent"
